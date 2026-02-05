@@ -1,89 +1,136 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.8.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.8.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <title>Music Tours with Axel</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <!-- SEO basics -->
+    <meta name="description" content="Exclusive music tours guided by Axel. Experience music like never before.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Music Tours with Axel logo">
+            <h1 data-i18n="site_title">Music Tours with Axel</h1>
+        </div>
+
+        <nav class="main-nav">
+            <a href="#home" data-i18n="nav_home"></a>
+            <a href="#tour" data-i18n="nav_tours"></a>
+            <a href="#about" data-i18n="nav_about"></a>
+            <a href="#contact" data-i18n="nav_contact"></a>
+        </nav>
+
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <button onclick="loadLanguage('en')">EN</button>
+            <button onclick="loadLanguage('de')">DE</button>
+            <button onclick="loadLanguage('es')">ES</button>
+            <button onclick="loadLanguage('fr')">FR</button>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- HERO / HOME -->
+        <section id="home" class="section">
+            <div class="section-content">
+                <h1 data-i18n="hero_title"></h1>
+                <p data-i18n="hero_subtitle"></p>
+
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/M2a7a55NHe8" title="Music Tour with Axel" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- TOUR -->
+        <section id="tour" class="section">
+            <div class="section-content">
+                <h2 data-i18n="tours_title"></h2>
+                <p data-i18n="tours_text"></p>
+                <button class="cta" data-i18n="cta_button"></button>
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="section-content">
+                <h2 data-i18n="about_title"></h2>
+                <p data-i18n="about_text"></p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="section-content">
+                <h2 data-i18n="contact_title"></h2>
+                <p data-i18n="contact_text"></p>
+
+                <div class="contact-links">
+                    <a href="mailto:glorvigena@gmail.com" class="contact-item">
+                        ✉️ glorvigena@gmail.com
+                    </a>
+
+                    <a href="tel:+33782668564" class="contact-item">
+                        📞 +33 7 82 66 85 64
+                    </a>
+                    <a href="https://www.instagram.com/musictours.with.axel" target="_blank" rel="noopener"
+                        class="contact-item">
+                        📸 Instagram: musictours.with.axel
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- GALLERY -->
+        <section id="gallery" class="section">
+            <div class="section-content">
+                <h2 data-i18n="gallery_title"></h2>
+
+                <div class="gallery-grid">
+                    <img src="images/0.jpg" alt="Music tour Berlin">
+                    <img src="images/1.jpg" alt="Live guitar performance">
+                    <img src="images/2.jpg" alt="Berlin historic walk">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <p data-i18n="footer_text"></p>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <!-- Language system must load first -->
+    <script src="js/i18n.js"></script>
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
 </html>

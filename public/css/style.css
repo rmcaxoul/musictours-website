@@ -8,7 +8,11 @@
     padding: 0;
 }
 
-html {
+html,
+body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
     scroll-behavior: smooth;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif;
@@ -19,6 +23,7 @@ body {
     background-color: #ffffff;
     line-height: 1.6;
 }
+
 
 /* =====================
    TYPOGRAPHY
@@ -104,6 +109,7 @@ p {
     position: relative;
     min-height: 100vh;
     padding: 6rem 2rem 4rem;
+    height: 100vh;
     /* accounts for fixed header */
 
     display: flex;
@@ -116,6 +122,9 @@ p {
 
     color: #ffffff;
     text-align: center;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 /* Overlay */
@@ -150,11 +159,83 @@ p {
 }
 
 /* =====================
+   HOME SECTION OVERRIDE
+===================== */
+
+#home .section-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 1100px;
+}
+
+
+/* =====================
    HERO SECTION
 ===================== */
 
 #home .section-content p {
     font-size: 1.25rem;
+}
+
+
+/* =====================
+   HOME LAYOUT (DESKTOP)
+===================== */
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.home-text {
+    flex: 1;
+    text-align: center;
+    /* margin-top: -12rem; */
+}
+
+.home-text h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 3rem;
+}
+
+
+.home-video {
+    flex: 0 0 320px;
+    /* perfect for vertical video */
+    aspect-ratio: 9 / 16;
+    margin-top: 12rem;
+}
+
+.home-video iframe {
+    width: 80%;
+    height: 80%;
+    border-radius: 16px;
+}
+
+/* =====================
+   MOBILE FALLBACK
+===================== */
+
+@media (max-width: 900px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-video {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .home-text {
+        text-align: center;
+    }
 }
 
 /* =====================

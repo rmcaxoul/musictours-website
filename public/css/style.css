@@ -223,20 +223,35 @@ p {
 ===================== */
 
 @media (max-width: 900px) {
-    .home-content {
+    #home {
         flex-direction: column;
-        text-align: center;
+        padding: 0;
+    }
+
+    #home .section-content {
+        padding: 0;
+        gap: 0;
+    }
+
+    .home-text,
+    .home-video {
+        height: 100vh;
+        width: 100%;
+        scroll-snap-align: start;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5rem 1.5rem 3rem;
     }
 
     .home-video {
-        width: 100%;
-        max-width: 360px;
-    }
-
-    .home-text {
-        text-align: center;
+        padding-top: 4rem;
     }
 }
+
+
 
 /* =====================
    CTA BUTTON
@@ -316,15 +331,24 @@ p {
 ===================== */
 
 #home {
-    background-image: url("../images/0.jpg");
+    background-image: url("../images/0.webp");
+    will-change: background-image;
 }
 
 #tour {
-    background-image: url("../images/1.jpg");
+    background-image: url("../images/1.webp");
+}
+
+#infos {
+    background-image: url("../images/3.jpeg");
 }
 
 #about {
-    background-image: url("../images/2.jpg");
+    background-image: url("../images/2.webp");
+}
+
+#about2 {
+    background-image: url("../images/0.webp");
 }
 
 #contact {
@@ -332,7 +356,7 @@ p {
 }
 
 #gallery {
-    background-image: url("../images/0.jpg");
+    background-image: url("../images/0.webp");
 }
 
 .video-wrapper {

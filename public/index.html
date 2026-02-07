@@ -47,28 +47,32 @@
     <!-- ================= MAIN ================= -->
     <main>
 
-        <!-- HERO / HOME -->
-        <section id="home" class="section home-section">
-            <div class="section-content home-content">
-
-                <!-- LEFT: Text -->
-                <div class="home-text">
-                    <h1 data-i18n="hero_title"></h1>
-                    <p data-i18n="hero_subtitle"></p>
-                </div>
-
-                <!-- RIGHT: Vertical video -->
-                <div class="home-video">
-                    <iframe src="https://www.youtube.com/embed/M2a7a55NHe8" title="Music tour teaser" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
+        <!-- home -->
+        <section id="home" class="section">
+            <div class="section-content">
+                <h1 data-i18n="hero_title"></h1><br><br>
+                <h3 data-i18n="hero_subtitle"></h3>
+                <div class="scroll-indicator" aria-hidden="true"></div>
             </div>
         </section>
 
 
+
+        <!-- RIGHT: Vertical video -->
+        <section id="home-video" class="section">
+            <div class="section-content">
+                <h3 data-i18n="video_title"></h3>
+                <div class="home-video">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/M2a7a55NHe8" title="Music tour teaser"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <!-- TOUR -->
@@ -151,10 +155,7 @@
     <!-- ================= SCRIPTS ================= -->
     <!-- Language system must load first -->
     <script src="js/i18n.js"></script>
-    <script async src="https://www.instagram.com/embed.js"></script>
     <script src="js/main.js"></script>
-
-
 </body>
 
 </html>

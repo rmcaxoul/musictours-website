@@ -21,29 +21,49 @@
 <body>
 
     <!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
     <header class="site-header">
+        <!-- Hamburger Menu Button (Mobile only) -->
+        <button class="hamburger-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <div class="logo">
             <img src="images/logo.png" alt="Music Tours with Axel logo">
             <h1 data-i18n="site_title">Music Tours with Axel</h1>
         </div>
 
-        <nav class="main-nav">
-            <a href="#home" data-i18n="nav_home"></a>
-            <a href="#tour" data-i18n="nav_tours"></a>
-            <a href="#about" data-i18n="nav_about"></a>
-            <a href="#contact" data-i18n="nav_contact"></a>
-        </nav>
-
-
-        <!-- Language Switcher -->
-        <div class="lang-switcher">
+        <!-- Language Switcher (Desktop only) -->
+        <div class="lang-switcher lang-switcher-desktop">
             <button onclick="loadLanguage('en')">EN</button>
             <button onclick="loadLanguage('de')">DE</button>
             <button onclick="loadLanguage('es')">ES</button>
             <button onclick="loadLanguage('fr')">FR</button>
         </div>
-    </header>
 
+        <!-- Mobile Navigation Menu (includes language selector) -->
+        <nav class="main-nav">
+            <div class="nav-links">
+                <a href="#home" data-i18n="nav_home"></a>
+                <a href="#tour" data-i18n="nav_tours"></a>
+                <a href="#about" data-i18n="nav_about"></a>
+                <a href="#contact" data-i18n="nav_contact"></a>
+            </div>
+
+            <!-- Language Switcher (Mobile only) -->
+            <div class="lang-switcher lang-switcher-mobile">
+                <h3 class="language-title" data-i18n="language_title">Language</h3>
+                <div class="language-buttons">
+                    <button onclick="loadLanguage('en')">English</button>
+                    <button onclick="loadLanguage('de')">Deutsch</button>
+                    <button onclick="loadLanguage('es')">Español</button>
+                    <button onclick="loadLanguage('fr')">Français</button>
+                </div>
+            </div>
+        </nav>
+    </header>
     <!-- ================= MAIN ================= -->
     <main>
 

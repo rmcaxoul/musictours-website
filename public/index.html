@@ -70,12 +70,28 @@
         <!-- home -->
         <section id="home" class="section">
             <div class="section-content">
-                <h1 data-i18n="hero_title"></h1><br><br>
+                <h1 data-i18n="hero_title"></h1>
                 <h3 data-i18n="hero_subtitle"></h3>
+
+                <!-- Language Switcher with Flags -->
+                <div class="home-language-switcher">
+                    <button class="flag-button" onclick="loadLanguage('en'); scrollToTop();" aria-label="English">
+                        🇬🇧
+                    </button>
+                    <button class="flag-button" onclick="loadLanguage('de'); scrollToTop();" aria-label="Deutsch">
+                        🇩🇪
+                    </button>
+                    <button class="flag-button" onclick="loadLanguage('fr'); scrollToTop();" aria-label="Français">
+                        🇫🇷
+                    </button>
+                    <button class="flag-button" onclick="loadLanguage('es'); scrollToTop();" aria-label="Español">
+                        🇪🇸
+                    </button>
+                </div>
+
                 <div class="scroll-indicator" aria-hidden="true"></div>
             </div>
         </section>
-
 
 
         <!-- RIGHT: Vertical video -->

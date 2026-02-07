@@ -95,3 +95,78 @@ window.addEventListener('load', handleHeaderVisibility);
 window.addEventListener('scroll', handleHeaderVisibility);
 // Check on window resize
 window.addEventListener('resize', handleHeaderVisibility);
+
+
+// =====================
+// SCROLL TO TOP FUNCTION
+// =====================
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// =====================
+// UPDATE ACTIVE FLAG
+// =====================
+
+function updateActiveFlag(language) {
+    // Remove active class from all flag buttons
+    const flagButtons = document.querySelectorAll('.flag-button');
+    flagButtons.forEach(button => button.classList.remove('active'));
+
+    // Add active class to current language flag
+    const langMap = {
+        'en': '🇬🇧',
+        'de': '🇩🇪',
+        'fr': '🇫🇷',
+        'es': '🇪🇸'
+    };
+
+    // Find and activate the correct flag button
+    flagButtons.forEach(button => {
+        if (button.textContent.includes(langMap[language])) {
+            button.classList.add('active');
+        }
+    });
+}
+
+// =====================
+// ENHANCE LOADLANGUAGE FUNCTION
+// =====================
+
+// Store reference to original loadLanguage function
+const originalLoadLanguage = window.loadLanguage;
+
+// Override loadLanguage to also update flags
+window.loadLanguage = function (lang) {
+    // Call original function
+    originalLoadLanguage(lang);
+
+    // Update active flag
+    updateActiveFlag(lang);
+
+    // Save preference
+    localStorage.setItem('preferred-language', lang);
+};
+
+// =====================
+// INITIALIZE ON PAGE LOAD
+// =====================
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Set active flag based on saved preference or default
+    const savedLang = localStorage.getItem('preferred-language') || 'en';
+    updateActiveFlag(savedLang);
+
+    // Update header language switcher too
+    const headerLangButtons = document.querySelectorAll('.lang-switcher button');
+    headerLangButtons.forEach(button => {
+        button.classList.remove('active');
+        if (button.textContent.toLowerCase().startsWith(savedLang)) {
+            button.classList.add('active');
+        }
+    });
+});
